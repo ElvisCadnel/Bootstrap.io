@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hotel's</title>
+        <link rel="stylesheet" href="assets/font-awesome/css/all.css">
+        <link rel="stylesheet" href="script/style.css">
+        <link rel="stylesheet" href="assets/bootstrap-5.3.2-dist/css/bootstrap.css">
+        <style>
+      @font-face {
+        font-family: Poppins-Regular;
+        src: url(assets/font-poppins/Poppins-Regular.ttf);
+      }
+      body {
+        overflow-x: hidden;
+      }
+      * {
+        font-family: Poppins-Regular;
+      }
+      nav > div > #menu > ul > li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      nav > div > #menu > ul > li > a {
+        padding: 5px 15px;
+      }
+
+      nav > div > #menu > ul > li > a {
+        /* transform: translate(-50%,-50%); */
+        display: inline;
+        position: relative;
+        color: black;
+      }
+      nav > div > #menu > ul > li > a:hover {
+        color: darkgray;
+      }
+      nav > div > #menu > ul > li > a::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        background: rgb(240, 64, 126);
+        transform: scale(0.1);
+        bottom: 0;
+        right: 0;
+        transition: 0.5s ease;
+      }
+      nav > div > #menu > ul > li > a:hover::after {
+        transform: scale(0.4);
+        /* width: 10%; */
+      }
+
+      .navbr {
+        position: fixed;
+        width: 100%;
+        transform: translateY(-20%);
+        transition: 0.5s ease;
+        animation: animate 1s;
+        margin-top: 0.5rem;
+        background-color: white;
+      }
+
+      #dev {
+        background: linear-gradient(
+              to top,
+              rgba(0, 0, 0, 0.7) 300%,
+              rgba(0, 0, 0, 0.7)
+            )
+            300%,
+          url(assets/image/pexels-pixabay-261102.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      @keyframes animate {
+        0% {
+          opacity: 0.5;
+        }
+        33% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      #onediv {
+        padding: 8rem 1rem;
+      }
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: white;
+        }
+      }
+      #selectheme > #theme {
+        padding: 10px 5px;
+        border-radius: 5%;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+      }
+      #selectheme > #theme:hover {
+        opacity: 0.8;
+        transition: 0.3s ease-in-out;
+        transform: scale(1.2);
+      }
+      .diva {
+        background-color: rgb(85, 85, 85) !important;
+        color: white;
+      }
+      .divb > div > div > div > #ref {
+        background-color: rgb(85, 85, 85) !important;
+        color: white;
+      }
+      .divb > div > div > div > #ref >p>button{
+        color:white ;
+      }
+      .divb > div > div > div > #ref >h5{
+        color:white !important ;
+      }
+      .divc {
+        background-color: rgb(85, 85, 85) !important;
+        color: white;
+      }
+      .divd > div {
+        background-color: rgb(70, 70, 70) !important;
+        color: white;
+      }
+        </style>
+    </head>
+    <body>
+        <nav id="navbin" class="z-3 navbar navbar-expand-lg overflow-hidden shadow-sm px-5 d-flex align-items-center flex-md-row flex-sm-column">
+            <div class="row col-md-7 col-lg-2 me-5">
+                <img class="col-md-4 col-lg-9 img-fluid" src="assets/image/hotels logo.png">
+            </div>
+            <div class="row col-lg-12 col-md-4 d-flex">
+                <button data-bs-target="#menu" data-bs-toggle="collapse" class="outline-none navbar-toggler border-0 absolute end-0">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="menu" class="collapse navbar-collapse row">
+                    <ul class="col-lg-6 col-sm-8 navbar-nav d-flex justify-content-center align-items-center">
+                        <li class="nav-item mx-2 my-sm-2 my-0">
+                            <a class="nav-link" href="#">Acceuil</a>
+                        </li>
+                        <li class="nav-item mx-2 my-sm-2 my-0">
+                            <a class="nav-link" href="#decouvrir">Découvrir</a>
+                        </li>
+                        <li class="nav-item mx-2 my-sm-2 my-0">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <ul id="forml" class="col-lg-3 form d-flex justify-content-lg-center justify-content-ms-center align-items-center mt-2 position-relative">
+                        <input
+                            style="height: 40%; width: 200px"
+                            class="border-warning pt-2 pb-2 ps-lg-2 pe-5 border-0 border-start rounded"
+                            placeholder="Search..."
+                            type="search"
+                            name=""
+                            id=""
+                        >
+                        <a href="#" style="right: 32%" class="form-label position-absolute pt-2 text-black text-opacity-25">
+                            <i class="fas fa-search hover link-hover"></i>
+                        </a>
+                    </ul>
+                    <ul id="selectheme" class="col-lg-3 mt-2">
+                        <i class="fas fa-cog bg-secondary-subtle" id="theme">THEME</i>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--navbar-->
+        <div id="onediv" class="container-fluid position-relative d-md-flex justify-content-around align-items-center bg-light">
+            <div class="row col-lg-6 col-md-7">
+                <h1 class="fs-1 mb-5">Bienvenue</h1>
+                <p class="container-fluid" style="text-align: justify; width: 700px">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id
+          adipisci eveniet odio.
+                </p>
+                <p class="pt-5">
+                    <button class="btn px-3 me-3 btn-secondary">Reservation</button>
+                    <button class="btn px-3 btn-outline-warning">Lieux</button>
+                </p>
+            </div>
+            <div class="row col-lg-5">
+                <img class="img-lg-fluid" style="border-radius: 5%" src="assets/image/online-e-book-5996827-4972886.png">
+            </div>
+        </div>
+        <!--onediv-->
+        <div id="dev" class="container-fluid pb-5">
+            <div class="row py-3" id="decouvrir">
+                <h1 class="h1 text-center col-12 pt-5 pb-3 text-white">Decouvrir</h1>
+            </div>
+            <div class="row row-cols-1 py-5 row-cols-md-3 d-flex justify-content-around g-4">
+                <div class="col col-md-3">
+                    <div class="card">
+                        <img src="assets/image/pexels-pixabay-261102.jpg" class="card-img-top shadow-sm" alt="...">
+                        <div id="ref" class="card-body shadow-lg">
+                            <h5 class="card-title text-center pt-1 text-warning">Luxe</h5>
+                            <hr style="width: 40%; margin: 0px auto" class="pb-2">
+                            <p class="card-text pt-2" style="text-align: justify">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <p class="text-center mb-2">
+                                <button class="btn btn-outline-warning">Réserver</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-3">
+                    <div class="card">
+                        <img src="assets/image/pexels-konstantinos-eleftheriadis-916620-2034335.jpg" class="card-img-top shadow-sm" alt="...">
+                        <div id="ref" class="card-body shadow-lg">
+                            <h5 class="card-title text-center pt-1 text-warning">
+                                Vue extérieur
+                            </h5>
+                            <hr style="width: 40%; margin: 0px auto" class="pb-2">
+                            <p class="card-text pt-2" style="text-align: justify">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <p class="text-center mb-2">
+                                <button class="btn btn-outline-warning">Réserver</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-3">
+                    <div class="card">
+                        <img src="assets/image/14.jpg" class="card-img-top shadow-sm" alt="...">
+                        <div id="ref" class="card-body shadow-lg py-4">
+                            <h5 class="card-title text-center pt-1 text-warning">Confort</h5>
+                            <hr style="width: 40%; margin: 0px auto" class="pb-2">
+                            <p class="card-text pt-2" style="text-align: justify">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <p class="text-center mb-2">
+                                <button class="btn btn-outline-warning">Réserver</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 pb-5 row-cols-md-3 d-flex justify-content-around g-4">
+                <div id="carouselExampleAutoplaying" class="col col-md-3">
+                    <div class="card">
+                        <img src="assets/image/room-1.jpg" class="card-img-top shadow-sm" alt="...">
+                        <div id="ref" class="card-body shadow-lg">
+                            <h5 class="card-title text-center pt-1 text-warning">Chambre 1</h5>
+                            <hr style="width: 40%; margin: 0px auto" class="pb-2">
+                            <p class="card-text pt-2" style="text-align: justify">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <p class="text-center mb-2">
+                                <button class="btn btn-outline-warning">Réserver</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-3">
+                    <div class="card">
+                        <img src="assets/image/room-2.jpg" class="card-img-top shadow-sm" alt="...">
+                        <div id="ref" class="card-body shadow-lg">
+                            <h5 class="card-title text-center pt-1 text-warning">Chambre 2</h5>
+                            <hr style="width: 40%; margin: 0px auto" class="pb-2">
+                            <p class="card-text pt-2" style="text-align: justify">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <p class="text-center mb-2">
+                                <button class="btn btn-outline-warning">Réserver</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-3">
+                    <div class="card">
+                        <img src="assets/image/room-3.jpg" class="card-img-top shadow-sm" alt="...">
+                        <div id="ref" class="card-body shadow-lg">
+                            <h5 class="card-title text-center pt-1 text-warning">Chambre 3</h5>
+                            <hr style="width: 40%; margin: 0px auto" class="pb-2">
+                            <p class="card-text pt-2" style="text-align: justify">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <p class="text-center mb-2">
+                                <button class="btn btn-outline-warning">Réserver</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- decouvrir     -->
+        <div id="cont" class="container-fluid bg-light pb-5">
+            <div class="py-5">
+                <h1 id="contact" class="text-center">Contact</h1>
+            </div>
+            <div class="d-lg-flex flex-lg-row flex-sm-colum align-items-center justify-content-around">
+                <div style="width: 100%">
+                    <img class="img-fluid" src="assets/image/online-best-seller-website-5754470-4825985.png" alt="">
+                </div>
+                <form action="index.html" class="g-3 row">
+                    <div class="col-md-5 me-md-5">
+                        <label class="form-label" for="name">Name</label>
+                        <input
+                            class="form-control"
+                            type="text"
+                            name="name"
+                            id="name"
+                        >
+                    </div>
+                    <div class="col-md-5">
+                        <label class="form-label" for="email">Email</label>
+                        <input
+                            class="form-control"
+                            type="email"
+                            name="email"
+                            id="email"
+                        >
+                    </div>
+                    <div class="col-md-5 me-5">
+                        <label class="form-label" for="adresse">Adresse</label>
+                        <input
+                            class="form-control"
+                            type="text"
+                            name="adresse"
+                            id="adresse"
+                        >
+                    </div>
+                    <div class="col-md-5">
+                        <label class="form-label" for="ville">Ville</label>
+                        <input
+                            class="form-control"
+                            type="text"
+                            name="ville"
+                            id="ville"
+                        >
+                    </div>
+                    <div class="col-md-10 d-flex">
+                        <label class="form-label me-3" for="message">Message</label>
+                        <textarea
+                            class="form-control"
+                            placeholder="Message ...."
+                            name="message"
+                            id="message"
+                            rows="6"
+                        ></textarea>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center my-4">
+                        <button id="send" type="submit" class="btn btn-outline-warning">
+                            Envoyer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="bg-secondary-subtle py-5 container-fluid d-md-flex justify-content-around align-items-center">
+                <div class="">
+                    <img src="assets/image/online-meeting-5138079-4292954.png" alt="">
+                </div>
+                <div>
+                    <ul class="d-block">
+                        <a href="#">Acceuil</a>
+                        <a href="#decouvrir">Découvrir</a>
+                        <a href="#contact">Contact</a>
+                    </ul>
+                    <p class="text-justify" style="width: 400px; text-align: justify">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            aliquam autem sequi itaque molestias cupiditate eius, neque
+            doloribus
+                    </p>
+                </div>
+            </div>
+            <div class="bg-secondary-subtle border-warning-subtle border-top d-flex justify-content-between border-2 pt-4">
+                <p class="ms-5">CopyRight &copy tous droits réservés</p>
+                <p class="d-flex m-0 me-4">
+                    <a class="me-4" href="#">Terme et Condition</a>
+                    <a href="#">Confidentialité</a>
+                </p>
+            </div>
+        </footer>
+        <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script/srcipt.js"></script>
+    </body>
+</html>
